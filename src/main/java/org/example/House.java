@@ -1,12 +1,15 @@
 package org.example;
 
-public class House extends Asset{
+public class House extends Asset {
     private String address;
     private int condition;
     private int squareFoot;
     private int lotSize;
 
-    public House(String description, String dataAcquired, double originalCost) {
+    public House(String description, String dataAcquired, double originalCost, String address,
+                 int condition,
+                 int squareFoot,
+                 int lotSize) {
         super(description, dataAcquired, originalCost);
         this.address = address;
         this.condition = condition;
@@ -44,5 +47,28 @@ public class House extends Asset{
 
     public void setLotSize(int lotSize) {
         this.lotSize = lotSize;
+    }
+
+    @Override
+    public double getValue() {
+
+        double pricePerFoot = 0;
+
+        switch (condition) {
+            case 1:
+                pricePerFoot = 180.0;
+                break;
+            case 2:
+                pricePerFoot = 130.0;
+                break;
+            case 3:
+                pricePerFoot = 90.0;
+                break;
+            case 4:
+                pricePerFoot = 80.0;
+                break;
+        }
+
+        return (squareFoot * pricePerFoot) + (lotSize * 0.25);
     }
 }

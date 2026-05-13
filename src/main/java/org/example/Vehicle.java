@@ -5,7 +5,8 @@ public class Vehicle extends Asset{
     private String makeModel;
     private int odometer;
 
-    public Vehicle(String description, String dataAcquired, double originalCost) {
+    public Vehicle(String description, String dataAcquired, double originalCost,
+                   int year, String makeModel, int odometer) {
         super(description, dataAcquired, originalCost);
         this.year = year;
         this.makeModel = makeModel;
@@ -13,6 +14,7 @@ public class Vehicle extends Asset{
     }
 
     public int getYear() {
+
         return year;
     }
 
@@ -34,5 +36,11 @@ public class Vehicle extends Asset{
 
     public void setOdometer(int odometer) {
         this.odometer = odometer;
+    }
+    @Override
+    public double getValue() {
+
+        // Simple depreciation example
+        return getOriginalCost() * 0.6;
     }
 }
