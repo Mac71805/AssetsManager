@@ -6,10 +6,8 @@ public class House extends Asset {
     private int squareFoot;
     private int lotSize;
 
-    public House(String description, String dataAcquired, double originalCost, String address,
-                 int condition,
-                 int squareFoot,
-                 int lotSize) {
+    public House(String description, String dataAcquired, double originalCost, String address,int condition,
+                 int squareFoot, int lotSize) {
         super(description, dataAcquired, originalCost);
         this.address = address;
         this.condition = condition;

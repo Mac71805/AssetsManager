@@ -40,7 +40,6 @@ public class Vehicle extends Asset{
     @Override
     public double getValue() {
 
-        // Simple depreciation example
         return getOriginalCost() * 0.6;
     }
 }
